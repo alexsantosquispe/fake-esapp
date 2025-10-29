@@ -16,7 +16,7 @@ export const StatusCell = ({ status }: StatusCellProps) => {
     <Cell>
       <span
         className={twMerge(
-          'rounded-md px-2 py-12 text-xs font-semibold uppercase',
+          'rounded-md px-2 py-1 text-xs font-semibold uppercase',
           statusStyles
         )}
       >
