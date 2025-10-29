@@ -6,8 +6,8 @@ interface StatusCellProps {
 }
 
 const STATUS_COLORS = {
-  completed: 'bg-green-200 text-green-800',
-  pending: 'bg-yellow-200 text-yellow-800'
+  completed: 'bg-emerald-100 text-emerald-800',
+  pending: 'bg-amber-100 text-amber-800'
 };
 
 export const StatusCell = ({ status }: StatusCellProps) => {

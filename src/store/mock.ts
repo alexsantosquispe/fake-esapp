@@ -1,6 +1,6 @@
 import type { TransactionType } from '../types';
 
-export const mockTransactions: TransactionType[] = [
+export const TRANSACTIONS_MOCK: TransactionType[] = [
   {
     id: '10024581',
     type: 'transfer',

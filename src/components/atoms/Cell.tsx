@@ -8,7 +8,7 @@ interface CellProps {
 }
 
 export const Cell = ({ children, isHeader = false, className }: CellProps) => {
-  const CELL_STYLES = 'p-4 text-start';
+  const CELL_STYLES = 'min-w-24 p-4 text-start';
 
   if (isHeader) {
     return (

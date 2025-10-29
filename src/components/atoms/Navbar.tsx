@@ -1,5 +1,6 @@
 import { NavLink, type NavLinkRenderProps } from 'react-router';
 import cn from 'clsx';
+import { Logo } from './Logo';
 
 const menu = [
   { label: 'Dashboard', href: '/dashboard' },
@@ -14,13 +15,11 @@ export const Navbar = () => {
     });
 
   return (
-    <header className="fixed flex w-full justify-center border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <header className="fixed flex h-14 w-full justify-center border-b border-neutral-200 bg-white/80 backdrop-blur">
       <div className="flex w-full max-w-7xl justify-between">
-        <div className="bg-primary flex items-center px-4 text-2xl font-semibold text-white">
-          f-esapp
-        </div>
-        <nav className="py-4">
-          <ul className="flex gap-10 text-sm font-medium text-black">
+        <Logo />
+        <nav className="hidden p-4 md:flex xl:px-0">
+          <ul className="flex text-sm font-medium text-black md:gap-10">
             {menu.map((item) => (
               <NavLink
                 key={item.href}
