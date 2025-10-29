@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router';
 
 import { Dashboard } from './pages/Dashboard';
 import { NotFount } from './pages/NotFount';
-import { Transactions } from './pages/Transactions';
+import Transactions from './pages/Transactions';
 
 export const AppRouter = () => {
   return (

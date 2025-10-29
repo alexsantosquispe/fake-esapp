@@ -6,7 +6,7 @@
 }
 
 @theme {
-  --color-primary: #0f5baa;
+  --color-primary: var(--color-blue-700);
 }
 
 html,
