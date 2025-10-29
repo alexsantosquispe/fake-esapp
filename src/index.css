@@ -5,6 +5,10 @@
   --font-montserrat: 'Montserrat', system-ui, sans-serif;
 }
 
+@theme {
+  --color-primary: #0f5baa;
+}
+
 html,
 body {
   margin: 0;
