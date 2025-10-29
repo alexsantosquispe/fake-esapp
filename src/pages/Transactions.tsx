@@ -1,4 +1,4 @@
-import { TransactionsTable } from '../components/molecules/TransactionsTable';
+import { TransactionsTable } from '../components/molecules/TransactionsTable/TransactionsTable';
 
 const Transactions = () => {
   return (
