@@ -12,19 +12,13 @@ export const Cell = ({ children, isHeader = false, className }: CellProps) => {
 
   if (isHeader) {
     return (
-      <th
-        className={twMerge(
-          CELL_STYLES,
-          'bg-neutral-100 font-medium capitalize',
-          className
-        )}
-      >
+      <th className={twMerge(CELL_STYLES, 'font-medium capitalize', className)}>
         {children}
       </th>
     );
   }
 
   return (
-    <td className={twMerge(CELL_STYLES, 'py-3', className)}>{children}</td>
+    <td className={twMerge(CELL_STYLES, 'py-2', className)}>{children}</td>
   );
 };

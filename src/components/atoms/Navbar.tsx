@@ -15,7 +15,7 @@ export const Navbar = () => {
     });
 
   return (
-    <header className="fixed flex h-14 w-full justify-center border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <header className="fixed z-50 flex h-14 w-full justify-center border-b border-neutral-200 bg-white/60 backdrop-blur-lg">
       <div className="flex w-full max-w-7xl justify-between">
         <Logo />
         <nav className="hidden p-4 md:flex xl:px-0">

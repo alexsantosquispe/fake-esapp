@@ -8,7 +8,7 @@ interface InfoCardProps {
 
 export const InfoCard = ({ title, value, icon }: InfoCardProps) => {
   return (
-    <div className="flex items-center justify-center gap-2 rounded-xl border border-neutral-200 p-2 shadow-sm md:gap-4 md:p-4">
+    <div className="flex w-fit items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-white p-2 md:gap-4 md:p-4">
       <div className="text-primary rounded-full bg-blue-100 p-2">{icon}</div>
 
       <div className="flex flex-col">

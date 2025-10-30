@@ -1,3 +1,7 @@
+export interface SvgIconProps {
+  className?: string;
+}
+
 export type StatusType = 'completed' | 'pending';
 
 export interface TransactionType {

@@ -16,8 +16,8 @@ export const TransactionsTable = ({ data }: TransactionsTableProps) => {
   return (
     <div
       className={twMerge(
-        'flex w-[90dvw] self-center overflow-auto rounded-xl border border-neutral-200 shadow-sm md:w-full',
-        cn({ 'min-h-1/2': !data.length })
+        'flex w-[90dvw] self-center overflow-auto rounded-b-xl border border-neutral-200 bg-white md:w-full',
+        cn({ 'h-[40dvh]': !data.length })
       )}
     >
       {!data.length && (
