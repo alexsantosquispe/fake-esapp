@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { DollarSignIcon } from '../icons/DollarSignIcon';
 import { HeaderSection } from '../components/molecules/HeaderSection/HeaderSection';
@@ -16,17 +16,17 @@ const Transactions = () => {
   });
 
   const filteredData = useMemo(() => {
-    if (!filterValue.value) return data;
+    if (!filterValue.value.trim()) return data;
 
-    return data.filter(
-      (item) =>
-        item[filterValue?.column as keyof TransactionType] === filterValue.value
-    );
+    const column = filterValue?.column as keyof TransactionType;
+    return data.filter((item) => {
+      const columnValue = String(item[column]).toLowerCase();
+      return columnValue.includes(filterValue.value.toLowerCase());
+    });
   }, [data, filterValue]);
 
-  const onSearchHandler = useCallback((value: string, column: string) => {
+  const onSearchHandler = (value: string, column: string) =>
     setFilterValue({ value, column });
-  }, []);
 
   return (
     <div className="flex w-full flex-col gap-2 px-4 py-8 xl:px-0">
@@ -41,7 +41,10 @@ const Transactions = () => {
       <div className="flex flex-col">
         <HeaderSection onSearchHandler={onSearchHandler} />
 
-        <TransactionsTable data={filteredData} />
+        <TransactionsTable
+          data={filteredData}
+          totalTransactions={data.length}
+        />
       </div>
     </div>
   );

@@ -5,19 +5,23 @@ import { SELECT_COLUMNS } from '../../utils/constants';
 interface SearchBarProps {
   placeholder: string;
   onChange: (value: string, column: string) => void;
+  time?: number;
 }
 
-export const SearchBar = ({ placeholder, onChange }: SearchBarProps) => {
+export const SearchBar = ({
+  placeholder,
+  onChange,
+  time = 700
+}: SearchBarProps) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedColumn, setSelectedColumn] = useState(SELECT_COLUMNS[0].value);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       onChange(searchValue, selectedColumn);
-    }, 1000);
-
+    }, time);
     return () => clearTimeout(timer);
-  }, [searchValue, selectedColumn, onChange]);
+  }, [searchValue, selectedColumn, onChange, time]);
 
   return (
     <div className="focus-within:border-primary focus-within:ring-primary relative flex w-fit rounded-lg border border-neutral-200 pr-2 transition-all focus-within:ring-1">

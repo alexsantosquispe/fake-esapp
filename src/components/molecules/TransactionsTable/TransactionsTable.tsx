@@ -10,9 +10,13 @@ import { twMerge } from 'tailwind-merge';
 
 interface TransactionsTableProps {
   data: TransactionType[];
+  totalTransactions: number;
 }
 
-export const TransactionsTable = ({ data }: TransactionsTableProps) => {
+export const TransactionsTable = ({
+  data,
+  totalTransactions
+}: TransactionsTableProps) => {
   return (
     <div
       className={twMerge(
@@ -68,6 +72,13 @@ export const TransactionsTable = ({ data }: TransactionsTableProps) => {
               </tr>
             ))}
           </tbody>
+          <tfoot>
+            <tr className="border-t border-neutral-200">
+              <Cell className="py-4 text-xs">
+                <span>{`Showing ${data.length} of ${totalTransactions} results`}</span>
+              </Cell>
+            </tr>
+          </tfoot>
         </table>
       )}
     </div>

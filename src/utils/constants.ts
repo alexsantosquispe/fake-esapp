@@ -9,9 +9,12 @@ export const TABLE_COLUMNS = [
 ];
 
 export const SELECT_COLUMNS = [
-  { value: 'fromAccount', label: 'Origin' },
-  { value: 'toAccount', label: 'Destination' },
-  { value: 'amount', label: 'Amount' }
+  { value: 'from', label: 'Ori. name' },
+  { value: 'fromAccount', label: 'Ori. account' },
+  { value: 'to', label: 'Dest. name' },
+  { value: 'toAccount', label: 'Dest. account' },
+  { value: 'amount', label: 'Amount' },
+  { value: 'status', label: 'Status' }
 ];
 
 export const STATUS_COLORS = {
