@@ -5,6 +5,8 @@ import { Cell } from '../../atoms/Cell';
 import { StatusCell } from './components/StatusCell';
 import { TABLE_COLUMNS } from '../../../utils/constants';
 import type { TransactionType } from '../../../types';
+import cn from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 interface TransactionsTableProps {
   data: TransactionType[];
@@ -12,9 +14,14 @@ interface TransactionsTableProps {
 
 export const TransactionsTable = ({ data }: TransactionsTableProps) => {
   return (
-    <div className="flex min-h-1/2 w-[90dvw] self-center overflow-auto rounded-xl border border-neutral-200 shadow-sm md:w-full">
+    <div
+      className={twMerge(
+        'flex w-[90dvw] self-center overflow-auto rounded-xl border border-neutral-200 shadow-sm md:w-full',
+        cn({ 'min-h-1/2': !data.length })
+      )}
+    >
       {!data.length && (
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex min-h-1/2 flex-1 items-center justify-center">
           No transactions found
         </div>
       )}

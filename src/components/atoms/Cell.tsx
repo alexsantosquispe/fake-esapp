@@ -24,5 +24,7 @@ export const Cell = ({ children, isHeader = false, className }: CellProps) => {
     );
   }
 
-  return <td className={twMerge(CELL_STYLES, className)}>{children}</td>;
+  return (
+    <td className={twMerge(CELL_STYLES, 'py-3', className)}>{children}</td>
+  );
 };
