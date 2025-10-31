@@ -6,7 +6,7 @@ interface ButtonProps {
   label: string;
   ariaLabel: string;
   onClick: () => void;
-  icon: ReactNode;
+  icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   isDisabled?: boolean;
   className?: string;
@@ -28,12 +28,12 @@ export const Button = ({
       type={type}
       disabled={isDisabled}
       className={twMerge(
-        'bg-primary flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white',
+        'bg-primary flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white',
         cn({ 'hover:bg-primary/90 hover:cursor-pointer': !isDisabled }),
         className
       )}
     >
-      {icon}
+      {!!icon && icon}
       {label}
     </button>
   );

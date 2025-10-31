@@ -15,3 +15,10 @@ export interface TransactionType {
   date: string;
   status: StatusType;
 }
+
+export interface AccountType {
+  id: string;
+  name: string;
+  account: string;
+  totalAmount: number;
+}

@@ -1,4 +1,4 @@
-import type { TransactionType } from '../types';
+import type { AccountType, TransactionType } from '../types';
 
 export const TRANSACTIONS_MOCK: TransactionType[] = [
   {
@@ -220,5 +220,50 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     amount: 100,
     date: '2025-10-25T09:15:23.000Z',
     status: 'completed'
+  }
+];
+
+export const ACCOUNTS_MOCK: AccountType[] = [
+  {
+    id: 'b2b1e0b0-8e6f-4c76-b5d9-7c8a7280eac1',
+    name: 'John Doe',
+    account: '1023456789',
+    totalAmount: 4000
+  },
+  {
+    id: 'a6c9d8c3-7f8e-4c20-b67b-3d07b5321c2a',
+    name: 'Emma Johnson',
+    account: '4067891230',
+    totalAmount: 1900
+  },
+  {
+    id: 'e3fbbfb4-40a0-4f77-9212-9fba6a6a0219',
+    name: 'Liam Wilson',
+    account: '6089123450',
+    totalAmount: 3050
+  },
+  {
+    id: '9cc9b821-2185-4db9-86bb-d0a99d28cb1a',
+    name: 'Michael Smith',
+    account: '3056789120',
+    totalAmount: 950
+  },
+  {
+    id: '7df9f7d0-6a5b-41ea-94ab-3f9b5c54774b',
+    name: 'Olivia Brown',
+    account: '5078912340',
+    totalAmount: 680
+  },
+  {
+    id: 'e928e4c3-1968-48e5-b5a8-10bafc054142',
+    name: 'Jane Doe',
+    account: '2045678910',
+    totalAmount: 5300
+  },
+  {
+    id: '5b13f4d2-8cb8-47b1-9c56-0b2c8709867a',
+    name: 'Sophia Miller',
+    account: '7091234560',
+    totalAmount: 1800
   }
 ];
