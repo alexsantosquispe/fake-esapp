@@ -22,8 +22,8 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
   } = useForm<NewTransactionFormType>({
     resolver: zodResolver(NewTransactionFormSchema),
     defaultValues: {
-      from: '',
-      to: '',
+      from: undefined,
+      to: undefined,
       amount: ''
     }
   });
@@ -37,7 +37,7 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex w-full flex-col gap-5 px-2 pt-3 pb-2"
     >
-      <div className="flex flex-col items-end gap-2 md:flex-row md:gap-5">
+      <div className="flex flex-col items-start gap-2 rounded-lg border border-neutral-300 p-4 md:flex-row md:gap-5">
         <AccountsDropdown
           label="Origin account"
           name="from"
@@ -47,7 +47,7 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
           isRequired={true}
           errorMessage={errors.from?.message}
         />
-        <div className="self-center rounded-full bg-amber-100 p-2 text-amber-500 md:my-1">
+        <div className="mt-6 rounded-full bg-amber-100 p-2 text-amber-500">
           <ArrowRightLeftIcon />
         </div>
         <AccountsDropdown
