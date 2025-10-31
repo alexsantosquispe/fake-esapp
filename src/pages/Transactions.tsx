@@ -40,7 +40,7 @@ const Transactions = () => {
         icon={<DollarSignIcon className="size-5" />}
       />
 
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
         <HeaderSection onSearchHandler={onSearchHandler} />
 
         <TransactionsTable

@@ -9,8 +9,8 @@ interface ModalProps {
 
 export const Modal = ({ title, children, onClose }: ModalProps) => {
   return (
-    <div className="fixed inset-0 z-50 flex flex-1 items-center justify-center bg-black/50 backdrop-blur-lg">
-      <div className="flex min-w-80 flex-col items-center justify-center gap-2 rounded-xl bg-white p-2">
+    <div className="fixed inset-0 z-50 flex flex-1 items-end justify-center bg-black/50 backdrop-blur-lg md:items-center">
+      <div className="flex w-full flex-col items-center justify-center gap-2 rounded-t-xl bg-white px-2 py-4 md:w-fit md:min-w-80 md:rounded-xl md:p-2">
         <button
           onClick={onClose}
           aria-label="Close modal button"

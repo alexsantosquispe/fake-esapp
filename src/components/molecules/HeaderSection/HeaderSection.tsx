@@ -26,7 +26,7 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
   };
 
   return (
-    <div className="flex w-full flex-col items-center gap-2 rounded-t-xl border border-b-0 border-neutral-200 bg-white py-4 md:flex-row md:justify-between md:p-4">
+    <div className="flex w-[95dvw] flex-col items-center justify-center gap-2 rounded-t-xl border border-b-0 border-neutral-200 bg-white py-4 md:w-full md:flex-row md:justify-between md:p-4">
       <h2 className="text-lg font-medium">Transactions history</h2>
       <div className="flex w-full flex-col-reverse gap-2 px-4 md:w-fit md:flex-row md:p-0">
         <SearchBar
@@ -42,7 +42,7 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
       </div>
 
       {isModalOpen && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
           <NewTransactionModal onClose={closeModal} />
         </Suspense>
       )}

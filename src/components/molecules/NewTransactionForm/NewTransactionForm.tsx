@@ -8,6 +8,7 @@ import {
 import { useForm, type Control, type FieldValues } from 'react-hook-form';
 import { AccountsDropdown } from '../../atoms/AccountsDropdown';
 import { ACCOUNTS_MOCK } from '../../../store/mock';
+import { ArrowRightLeftIcon } from '../../../icons/ArrowRightLeftIcon';
 
 interface NewTransactionFormProps {
   onSave: (formData: NewTransactionFormType) => void;
@@ -36,7 +37,7 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
       className="flex w-full flex-col gap-5 px-2 pt-3 pb-2"
     >
-      <div className="grid w-full grid-cols-2 gap-5">
+      <div className="flex flex-col items-end gap-2 md:flex-row md:gap-5">
         <AccountsDropdown
           label="Origin account"
           name="from"
@@ -46,6 +47,9 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
           isRequired={true}
           errorMessage={errors.from?.message}
         />
+        <div className="self-center rounded-full bg-amber-100 p-2 text-amber-500 md:my-1">
+          <ArrowRightLeftIcon />
+        </div>
         <AccountsDropdown
           label="Destination account"
           name="to"

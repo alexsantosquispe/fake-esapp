@@ -54,7 +54,7 @@ export const AccountsDropdown = ({
         };
 
         return (
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative w-full md:w-fit" ref={dropdownRef}>
             <label htmlFor={name} className="font-medium">
               {label}
               {isRequired && <span className="text-rose-600">&nbsp;*</span>}
@@ -64,7 +64,7 @@ export const AccountsDropdown = ({
               ariaLabel={label}
               onClick={openMenu}
               className={twMerge(
-                'h-12 w-64 flex-row-reverse justify-between border border-neutral-300 bg-white px-2 py-0 font-medium text-neutral-500 hover:bg-neutral-100',
+                'h-12 w-full flex-row-reverse justify-between border border-neutral-300 bg-white px-2 py-0 font-medium text-neutral-500 hover:bg-neutral-100 md:w-64',
                 cn({ 'border-rose-600': !!errorMessage }),
                 className
               )}

@@ -74,7 +74,7 @@ export const TransactionsTable = ({
           </tbody>
           <tfoot>
             <tr className="border-t border-neutral-200">
-              <Cell className="py-4 text-xs">
+              <Cell colSpan={TABLE_COLUMNS.length} className="py-4 text-xs">
                 <span>{`Showing ${data.length} of ${totalTransactions} results`}</span>
               </Cell>
             </tr>
