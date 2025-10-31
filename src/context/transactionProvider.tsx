@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react';
-import TransactionsContext from './TransactionsContext';
+import TransactionsContext from './TransactionsDefContext';
 import { TRANSACTIONS_MOCK } from '../store/mock';
 import type { TransactionType } from '../types';
 
