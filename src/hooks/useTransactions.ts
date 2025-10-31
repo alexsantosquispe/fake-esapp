@@ -1,4 +1,4 @@
-import TransactionsContext from '../context/TransactionsDefContext';
+import TransactionsContext from '../context/TransactionsContext';
 import { useContext } from 'react';
 
 const useTransactions = () => {
