@@ -20,7 +20,7 @@ export const TransactionsTable = ({
   return (
     <div
       className={twMerge(
-        'flex w-[90dvw] self-center overflow-auto rounded-b-xl border border-neutral-200 bg-white md:w-full',
+        'flex w-[95dvw] self-center overflow-auto rounded-b-xl border border-neutral-200 bg-white md:w-full',
         cn({ 'h-[40dvh]': !data.length })
       )}
     >

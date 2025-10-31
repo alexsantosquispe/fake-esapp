@@ -21,7 +21,7 @@ const SearchBar = ({ placeholder, onChange, time = 700 }: SearchBarProps) => {
   }, [searchValue, selectedColumn, time]);
 
   return (
-    <div className="focus-within:border-primary focus-within:ring-primary relative flex w-fit rounded-lg border border-neutral-200 pr-2 transition-all focus-within:ring-1">
+    <div className="focus-within:border-primary focus-within:ring-primary relative flex w-full rounded-lg border border-neutral-200 pr-2 transition-all focus-within:ring-1 md:w-fit">
       <input
         type="search"
         className="w-full py-2 pr-2 pl-4 focus:outline-none"

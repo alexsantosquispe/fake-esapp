@@ -28,9 +28,9 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
   };
 
   return (
-    <div className="flex w-full items-center justify-between rounded-t-xl border border-b-0 border-neutral-200 bg-white p-4">
+    <div className="flex w-full flex-col items-center gap-2 rounded-t-xl border border-b-0 border-neutral-200 bg-white py-4 md:flex-row md:justify-between md:p-4">
       <h2 className="text-lg font-medium">Transactions history</h2>
-      <div className="flex gap-2">
+      <div className="flex w-full flex-col-reverse gap-2 px-4 md:w-fit md:flex-row md:p-0">
         <SearchBar
           placeholder="Search by column..."
           onChange={onSearchHandler}
