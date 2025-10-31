@@ -1,14 +1,16 @@
+import { Suspense, lazy, useState } from 'react';
+
 import { Button } from '../../atoms/Button';
 import { CirclePlusIcon } from '../../../icons/CirclePlusIcon';
-import { Modal } from '../../atoms/Modal';
-import { NewTransactionForm } from '../NewTransactionForm/NewTransactionForm';
-import type { NewTransactionFormType } from '../NewTransactionForm/NewTransactionForm.schema';
 import SearchBar from '../../atoms/SearchBar';
-import { useState } from 'react';
 
 interface HeaderSectionProps {
   onSearchHandler: (value: string, column: string) => void;
 }
+
+const NewTransactionModal = lazy(
+  () => import('../NewTransactionModal/NewTransactionModal')
+);
 
 export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,10 +23,6 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
   const closeModal = () => {
     setIsModalOpen(false);
     document.body.style.overflow = 'auto';
-  };
-
-  const onSaveHandler = (formData: NewTransactionFormType) => {
-    console.log(formData);
   };
 
   return (
@@ -42,10 +40,11 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
           icon={<CirclePlusIcon className="size-5" />}
         />
       </div>
+
       {isModalOpen && (
-        <Modal title="New transaction" onClose={closeModal}>
-          <NewTransactionForm onSave={onSaveHandler} />
-        </Modal>
+        <Suspense fallback={<div>Loading...</div>}>
+          <NewTransactionModal onClose={closeModal} />
+        </Suspense>
       )}
     </div>
   );

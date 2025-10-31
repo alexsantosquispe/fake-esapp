@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 
 const menu = [
   { label: 'Dashboard', href: '/dashboard' },
-  { label: 'Transactions', href: '/history' }
+  { label: 'Transactions', href: '/transactions' }
 ];
 
 export const Navbar = () => {
