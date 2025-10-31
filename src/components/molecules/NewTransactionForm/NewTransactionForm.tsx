@@ -6,6 +6,8 @@ import {
   type NewTransactionFormType
 } from './NewTransactionForm.schema';
 import { useForm, type Control, type FieldValues } from 'react-hook-form';
+import { AccountsDropdown } from '../../atoms/AccountsDropdown';
+import { ACCOUNTS_MOCK } from '../../../store/mock';
 
 interface NewTransactionFormProps {
   onSave: (formData: NewTransactionFormType) => void;
@@ -32,23 +34,25 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex w-full flex-col gap-5 px-2 pb-2"
+      className="flex w-full flex-col gap-5 px-2 pt-3 pb-2"
     >
-      <div className="flex gap-5">
-        <InputField
-          label="User name origin"
+      <div className="grid w-full grid-cols-2 gap-5">
+        <AccountsDropdown
+          label="Origin account"
           name="from"
           control={control as unknown as Control<FieldValues>}
-          placeholder="Enter client name"
+          placeholder="Select origin account"
+          accounts={ACCOUNTS_MOCK}
           isRequired={true}
           errorMessage={errors.from?.message}
         />
-        <InputField
-          label="User name destination"
+        <AccountsDropdown
+          label="Destination account"
           name="to"
           control={control as unknown as Control<FieldValues>}
-          placeholder="Enter client name of destination"
           isRequired={true}
+          placeholder="Select destination account"
+          accounts={ACCOUNTS_MOCK}
           errorMessage={errors.to?.message}
         />
       </div>

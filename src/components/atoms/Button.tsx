@@ -7,6 +7,7 @@ interface ButtonProps {
   ariaLabel: string;
   onClick?: () => void;
   icon?: ReactNode;
+  children?: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   isDisabled?: boolean;
   className?: string;
@@ -17,6 +18,7 @@ export const Button = ({
   ariaLabel,
   onClick,
   icon,
+  children,
   type = 'button',
   isDisabled = false,
   className
@@ -34,7 +36,7 @@ export const Button = ({
       )}
     >
       {!!icon && icon}
-      {label}
+      {children || label}
     </button>
   );
 };
