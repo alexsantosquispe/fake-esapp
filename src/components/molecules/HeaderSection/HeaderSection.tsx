@@ -2,8 +2,10 @@ import { Button } from '../../atoms/Button';
 import { CirclePlusIcon } from '../../../icons/CirclePlusIcon';
 import { Modal } from '../../atoms/Modal';
 import { NewTransactionForm } from '../NewTransactionForm/NewTransactionForm';
-import { SearchBar } from '../../atoms/SearchBar';
+import type { NewTransactionFormType } from '../NewTransactionForm/NewTransactionForm.schema';
+import SearchBar from '../../atoms/SearchBar';
 import { useState } from 'react';
+
 interface HeaderSectionProps {
   onSearchHandler: (value: string, column: string) => void;
 }
@@ -19,6 +21,10 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
   const closeModal = () => {
     setIsModalOpen(false);
     document.body.style.overflow = 'auto';
+  };
+
+  const onSaveHandler = (formData: NewTransactionFormType) => {
+    console.log(formData);
   };
 
   return (
@@ -38,7 +44,7 @@ export const HeaderSection = ({ onSearchHandler }: HeaderSectionProps) => {
       </div>
       {isModalOpen && (
         <Modal title="New transaction" onClose={closeModal}>
-          <NewTransactionForm onSave={() => {}} />
+          <NewTransactionForm onSave={onSaveHandler} />
         </Modal>
       )}
     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { SELECT_COLUMNS } from '../../utils/constants';
 
@@ -8,11 +8,7 @@ interface SearchBarProps {
   time?: number;
 }
 
-export const SearchBar = ({
-  placeholder,
-  onChange,
-  time = 700
-}: SearchBarProps) => {
+const SearchBar = ({ placeholder, onChange, time = 700 }: SearchBarProps) => {
   const [searchValue, setSearchValue] = useState('');
   const [selectedColumn, setSelectedColumn] = useState(SELECT_COLUMNS[0].value);
 
@@ -21,7 +17,8 @@ export const SearchBar = ({
       onChange(searchValue, selectedColumn);
     }, time);
     return () => clearTimeout(timer);
-  }, [searchValue, selectedColumn, onChange, time]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchValue, selectedColumn, time]);
 
   return (
     <div className="focus-within:border-primary focus-within:ring-primary relative flex w-fit rounded-lg border border-neutral-200 pr-2 transition-all focus-within:ring-1">
@@ -46,3 +43,5 @@ export const SearchBar = ({
     </div>
   );
 };
+
+export default memo(SearchBar);

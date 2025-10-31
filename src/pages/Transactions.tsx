@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { DollarSignIcon } from '../icons/DollarSignIcon';
 import { HeaderSection } from '../components/molecules/HeaderSection/HeaderSection';
@@ -25,8 +25,10 @@ const Transactions = () => {
     });
   }, [data, filterValue]);
 
-  const onSearchHandler = (value: string, column: string) =>
-    setFilterValue({ value, column });
+  const onSearchHandler = useCallback(
+    (value: string, column: string) => setFilterValue({ value, column }),
+    []
+  );
 
   return (
     <div className="flex w-full flex-col gap-2 px-4 py-8 xl:px-0">
