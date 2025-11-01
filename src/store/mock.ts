@@ -8,7 +8,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     fromAccount: '1023456789',
     to: 'Emma Johnson',
     toAccount: '4067891230',
-    amount: 410,
+    amount: 420,
     date: '2025-10-31T22:33:28.000Z',
     status: 'completed'
   },
@@ -19,7 +19,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     fromAccount: '6089123450',
     to: 'Michael Smith',
     toAccount: '3056789120',
-    amount: 375,
+    amount: 300,
     date: '2025-10-31T14:59:55.000Z',
     status: 'pending'
   },
@@ -30,7 +30,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     fromAccount: '5078912340',
     to: 'Jane Doe',
     toAccount: '2045678910',
-    amount: 140,
+    amount: 220,
     date: '2025-10-31T10:24:44.000Z',
     status: 'completed'
   },
@@ -52,9 +52,9 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     fromAccount: '3056789120',
     to: 'Olivia Brown',
     toAccount: '5078912340',
-    amount: 330,
+    amount: 350,
     date: '2025-10-30T13:31:09.000Z',
-    status: 'pending'
+    status: 'completed'
   },
   {
     id: '1761959531504',
@@ -76,7 +76,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     toAccount: '4067891230',
     amount: 270,
     date: '2025-10-29T19:22:14.000Z',
-    status: 'pending'
+    status: 'completed'
   },
   {
     id: '1761959531506',
@@ -109,7 +109,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     toAccount: '6089123450',
     amount: 150,
     date: '2025-10-29T08:12:10.000Z',
-    status: 'pending'
+    status: 'completed'
   }
 ];
 

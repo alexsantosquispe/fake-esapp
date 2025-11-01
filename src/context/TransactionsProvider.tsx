@@ -3,48 +3,51 @@ import TransactionsContext from './TransactionsContext';
 import { TRANSACTIONS_MOCK } from '../store/mock';
 import type { TransactionType } from '../types';
 import { getAccountsByTransactions, getTopAccount } from '../utils/utils';
+import {
+  getStoredTransactions,
+  saveTransactions
+} from '../utils/localStorageUtils';
 
 interface TransactionsProviderType {
   children: ReactNode;
 }
 
-const LOCAL_STORAGE_KEY = 'transactions';
-
 const TransactionsProvider = ({ children }: TransactionsProviderType) => {
   const [data, setData] = useState<TransactionType[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const stored = getStoredTransactions();
     if (stored) {
       setData(JSON.parse(stored));
     } else {
-      localStorage.setItem(
-        LOCAL_STORAGE_KEY,
-        JSON.stringify(TRANSACTIONS_MOCK)
-      );
+      saveTransactions(TRANSACTIONS_MOCK);
       setData(TRANSACTIONS_MOCK);
     }
   }, []);
 
   useEffect(() => {
     if (data.length > 0) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+      saveTransactions(data);
     }
   }, [data]);
 
   const completedTransactions = useMemo(
-    () => data.filter((t) => t.status === 'completed'),
+    () => data.filter((transaction) => transaction.status === 'completed'),
     [data]
   );
 
   const pendingTransactions = useMemo(
-    () => data.filter((t) => t.status === 'pending'),
+    () => data.filter((transaction) => transaction.status === 'pending'),
     [data]
   );
 
   const totalAmount = useMemo(
-    () => data.reduce((acc, t) => acc + t.amount, 0),
-    [data]
+    () =>
+      completedTransactions.reduce(
+        (acc, transaction) => acc + transaction.amount,
+        0
+      ),
+    [completedTransactions]
   );
 
   const topAccount = useMemo(() => {

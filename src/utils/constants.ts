@@ -22,3 +22,5 @@ export const STATUS_COLORS = {
   pending: 'bg-yellow-200',
   failed: 'bg-red-200'
 };
+
+export const LOCAL_STORAGE_KEY = 'transactions';

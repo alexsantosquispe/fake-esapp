@@ -9,6 +9,25 @@ export const getAmountWithCurrency = (amount: number) => {
   return `$${amount.toFixed(2)}`;
 };
 
+export const getTotalTransferredToday = (data: TransactionType[]): number => {
+  if (!data?.length) return 0;
+
+  const today = new Date();
+
+  return data
+    .filter((transaction) => {
+      if (transaction.status !== 'completed') return false;
+
+      const transactionDate = new Date(transaction.date);
+      return (
+        transactionDate.getDate() === today.getDate() &&
+        transactionDate.getMonth() === today.getMonth() &&
+        transactionDate.getFullYear() === today.getFullYear()
+      );
+    })
+    .reduce((sum, transaction) => sum + transaction.amount, 0);
+};
+
 export const getAccountsByTransactions = (
   transactions: TransactionType[]
 ): Record<string, number> | null => {

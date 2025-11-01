@@ -1,3 +1,7 @@
+import {
+  getAmountWithCurrency,
+  getTotalTransferredToday
+} from '../utils/utils';
 import { useCallback, useMemo, useState } from 'react';
 
 import { DollarSignIcon } from '../icons/DollarSignIcon';
@@ -5,15 +9,19 @@ import { HeaderSection } from '../components/molecules/HeaderSection/HeaderSecti
 import { InfoCard } from '../components/atoms/InfoCard';
 import type { TransactionType } from '../types';
 import { TransactionsTable } from '../components/molecules/TransactionsTable/TransactionsTable';
-import { getAmountWithCurrency } from '../utils/utils';
 import useTransactions from '../hooks/useTransactions';
 
 const Transactions = () => {
-  const { data, totalAmount } = useTransactions();
+  const { data } = useTransactions();
   const [filterValue, setFilterValue] = useState({
     value: '',
     column: ''
   });
+
+  const totalTransferredToday = useMemo(
+    () => getTotalTransferredToday(data),
+    [data]
+  );
 
   const filteredData = useMemo(() => {
     if (!filterValue.value.trim()) return data;
@@ -35,8 +43,8 @@ const Transactions = () => {
       <h1 className="text-2xl font-semibold">Transactions</h1>
 
       <InfoCard
-        title="Total transactions"
-        value={getAmountWithCurrency(totalAmount)}
+        title="Today total transactions"
+        value={getAmountWithCurrency(totalTransferredToday)}
         icon={<DollarSignIcon />}
         className="w-fit"
       />
