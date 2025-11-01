@@ -13,7 +13,7 @@
 
 ## Overview
 
-This is a transaction simulator application built with a modern frontend stack including React, TypeScript, and Vite. It provides a user-friendly interface to simulate financial transactions between different accounts, view a dashboard with the latest transaction history, and monitor account balances.
+This is a transaction simulator application built with a modern frontend stack including React, TypeScript, and Vite. It provides a user-friendly interface to simulate financial transactions between different accounts, view a dashboard with the latest transaction history, and monitor account balances. The UI was based on the dribbble design: https://dribbble.com/shots/24557172-Admin-Transaction-Ui
 
 ## ✨ Features
 
@@ -107,18 +107,18 @@ src/
 └── utils/
 ```
 
--   `src/components`: Contains reusable UI components, organized into `atoms` and `molecules` based on Atomic Design principles.
--   `src/context`: Holds React context providers for state management.
--   `src/hooks`: Custom React hooks for reusable logic.
--   `src/icons`: SVG icons used throughout the application.
--   `src/pages`: Top-level page components that correspond to different routes.
--   `src/store`: State management logic (e.g., Zustand or Redux).
--   `src/types.ts`: TypeScript type definitions.
--   `src/utils`: Utility functions.
+- `src/components`: Contains reusable UI components, organized into `atoms` and `molecules` based on Atomic Design principles.
+- `src/context`: Holds React context providers for state management.
+- `src/hooks`: Custom React hooks for reusable logic.
+- `src/icons`: SVG icons used throughout the application.
+- `src/pages`: Top-level page components that correspond to different routes.
+- `src/store`: State management logic (e.g., Zustand or Redux).
+- `src/types.ts`: TypeScript type definitions.
+- `src/utils`: Utility functions.
 
 ## 💡 Best Practices
 
--   **TypeScript for Type Safety**: The entire codebase is written in TypeScript to ensure type safety and improve developer experience.
--   **Atomic Design**: Components are organized following Atomic Design principles (`atoms`, `molecules`) to promote reusability and scalability.
--   **Custom Hooks**: Reusable logic is extracted into custom hooks to keep components clean and maintainable.
--   **Code Quality**: ESLint and Prettier are configured to enforce a consistent code style and catch potential errors early.
+- **TypeScript for Type Safety**: The entire codebase is written in TypeScript to ensure type safety and improve developer experience.
+- **Atomic Design**: Components are organized following Atomic Design principles (`atoms`, `molecules`) to promote reusability and scalability.
+- **Custom Hooks**: Reusable logic is extracted into custom hooks to keep components clean and maintainable.
+- **Code Quality**: ESLint and Prettier are configured to enforce a consistent code style and catch potential errors early.
