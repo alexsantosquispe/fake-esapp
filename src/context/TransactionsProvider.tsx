@@ -14,6 +14,7 @@ interface TransactionsProviderType {
 
 const TransactionsProvider = ({ children }: TransactionsProviderType) => {
   const [data, setData] = useState<TransactionType[]>([]);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const stored = getStoredTransactions();
@@ -61,7 +62,13 @@ const TransactionsProvider = ({ children }: TransactionsProviderType) => {
 
   const createTransaction = (transaction: TransactionType) => {
     setData((prev) => [transaction, ...prev]);
+    setShowAlert(true);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowAlert(false), 1500);
+    return () => clearTimeout(timeout);
+  }, [showAlert]);
 
   return (
     <TransactionsContext.Provider
@@ -71,7 +78,8 @@ const TransactionsProvider = ({ children }: TransactionsProviderType) => {
         createTransaction,
         completedTransactions: completedTransactions.length,
         pendingTransactions: pendingTransactions.length,
-        topAccount
+        topAccount,
+        showAlert
       }}
     >
       {children}

@@ -8,6 +8,7 @@ interface TransactionsContextType {
   completedTransactions: number;
   pendingTransactions: number;
   topAccount: { name: string; transactions: number } | null;
+  showAlert: boolean;
 }
 
 const TransactionsContext = createContext<TransactionsContextType | null>(null);

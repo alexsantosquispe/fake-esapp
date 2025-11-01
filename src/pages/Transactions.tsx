@@ -12,7 +12,7 @@ import { TransactionsTable } from '../components/molecules/TransactionsTable/Tra
 import useTransactions from '../hooks/useTransactions';
 
 const Transactions = () => {
-  const { data } = useTransactions();
+  const { data, showAlert } = useTransactions();
   const [filterValue, setFilterValue] = useState({
     value: '',
     column: ''
@@ -41,6 +41,12 @@ const Transactions = () => {
   return (
     <div className="flex w-full flex-col gap-2 px-4 py-8 xl:px-0">
       <h1 className="text-2xl font-semibold">Transactions</h1>
+
+      {showAlert && (
+        <div className="absolute top-15 left-1/2 z-10 flex -translate-x-1/2 items-center justify-center rounded-lg bg-green-200/90 px-4 py-2 text-sm font-medium text-green-900 shadow-lg transition-opacity duration-300">
+          Transaction completed
+        </div>
+      )}
 
       <InfoCard
         title="Today total transactions"

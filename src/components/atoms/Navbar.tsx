@@ -18,8 +18,8 @@ export const Navbar = () => {
     <header className="fixed z-30 flex h-14 w-full justify-center border-b border-neutral-200 bg-white/60 backdrop-blur-lg">
       <div className="flex w-full max-w-7xl justify-between">
         <Logo />
-        <nav className="hidden p-4 md:flex xl:px-0">
-          <ul className="flex text-sm font-medium text-black md:gap-10">
+        <nav className="flex p-4 xl:px-0">
+          <ul className="flex items-center gap-4 text-xs font-semibold text-black md:gap-8 md:text-sm md:font-medium">
             {menu.map((item) => (
               <NavLink
                 key={item.href}
