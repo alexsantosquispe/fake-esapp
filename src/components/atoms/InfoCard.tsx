@@ -1,21 +1,37 @@
 import type { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface InfoCardProps {
   title: string;
   value: string;
+  secondValue?: string;
   icon: ReactNode;
+  className?: string;
 }
 
-export const InfoCard = ({ title, value, icon }: InfoCardProps) => {
+export const InfoCard = ({
+  title,
+  value,
+  secondValue,
+  icon,
+  className
+}: InfoCardProps) => {
   return (
-    <div className="flex w-fit items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-white p-2 md:gap-4 md:p-4">
+    <div
+      className={twMerge(
+        'flex h-24 w-fit items-center justify-center gap-4 rounded-xl border border-neutral-200 bg-white p-2 md:gap-5 md:p-4',
+        className
+      )}
+    >
       <div className="text-primary rounded-full bg-blue-100 p-2">{icon}</div>
-
       <div className="flex flex-col">
         <span className="text-xs font-medium text-neutral-500 md:text-sm">
           {title}
         </span>
-        <span className="text-2xl font-semibold md:text-3xl">{value}</span>
+        <span className="text-lg font-semibold md:text-2xl">{value}</span>
+        {secondValue && (
+          <span className="text-xs md:text-sm">{secondValue}</span>
+        )}
       </div>
     </div>
   );

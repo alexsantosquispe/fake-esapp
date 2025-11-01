@@ -5,6 +5,9 @@ interface TransactionsContextType {
   data: TransactionType[];
   totalAmount: number;
   createTransaction: (transaction: TransactionType) => void;
+  completedTransactions: number;
+  pendingTransactions: number;
+  topAccount: { name: string; transactions: number } | null;
 }
 
 const TransactionsContext = createContext<TransactionsContextType | null>(null);
