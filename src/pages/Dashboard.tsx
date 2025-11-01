@@ -1,5 +1,7 @@
 import { DollarSignIcon } from '../icons/DollarSignIcon';
+import { HashIcon } from '../icons/HashIcon';
 import { InfoCard } from '../components/atoms/InfoCard';
+import { StarIcon } from '../icons/StarIcon';
 import { getAmountWithCurrency } from '../utils/utils';
 import useTransactions from '../hooks/useTransactions';
 
@@ -21,22 +23,19 @@ const Dashboard = () => {
           <InfoCard
             title="Total amount transactions"
             value={getAmountWithCurrency(totalAmount)}
-            icon={<DollarSignIcon className="size-5" />}
-            className="w-full"
+            icon={<DollarSignIcon />}
           />
 
           <InfoCard
             title="Completed transactions"
             value={completedTransactions.toString()}
-            icon={<DollarSignIcon className="size-5" />}
-            className="w-full"
+            icon={<HashIcon />}
           />
 
           <InfoCard
             title="Pending transactions"
             value={pendingTransactions.toString()}
-            icon={<DollarSignIcon className="size-5" />}
-            className="w-full"
+            icon={<HashIcon />}
           />
 
           {topAccount && (
@@ -44,8 +43,7 @@ const Dashboard = () => {
               title="Top account"
               value={topAccount?.name}
               secondValue={`${topAccount?.transactions} transactions`}
-              icon={<DollarSignIcon className="size-5" />}
-              className="w-full"
+              icon={<StarIcon />}
             />
           )}
         </div>

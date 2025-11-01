@@ -47,7 +47,7 @@ export const NewTransactionForm = ({ onSave }: NewTransactionFormProps) => {
           isRequired={true}
           errorMessage={errors.from?.message}
         />
-        <div className="mt-6 rounded-full bg-amber-100 p-2 text-amber-500">
+        <div className="self-center rounded-full bg-amber-100 p-2 text-amber-500 md:mt-6 md:self-auto">
           <ArrowRightLeftIcon />
         </div>
         <AccountsDropdown

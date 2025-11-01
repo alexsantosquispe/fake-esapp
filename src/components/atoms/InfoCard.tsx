@@ -19,7 +19,7 @@ export const InfoCard = ({
   return (
     <div
       className={twMerge(
-        'flex h-24 w-fit items-center justify-center gap-4 rounded-xl border border-neutral-200 bg-white p-2 md:gap-5 md:p-4',
+        'flex h-24 w-full items-center justify-center gap-4 rounded-xl border border-neutral-200 bg-white p-2 md:gap-5 md:p-4',
         className
       )}
     >

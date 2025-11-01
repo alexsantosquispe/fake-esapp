@@ -37,7 +37,8 @@ const Transactions = () => {
       <InfoCard
         title="Total transactions"
         value={getAmountWithCurrency(totalAmount)}
-        icon={<DollarSignIcon className="size-5" />}
+        icon={<DollarSignIcon />}
+        className="w-fit"
       />
 
       <div className="flex flex-col items-center">

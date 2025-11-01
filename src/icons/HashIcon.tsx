@@ -1,7 +1,7 @@
 import type { SvgIconProps } from '../types';
 import { twMerge } from 'tailwind-merge';
 
-export const DollarSignIcon = ({ className }: SvgIconProps) => {
+export const HashIcon = ({ className }: SvgIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,8 +15,10 @@ export const DollarSignIcon = ({ className }: SvgIconProps) => {
       strokeLinejoin="round"
       className={twMerge('size-5', className)}
     >
-      <line x1="12" x2="12" y1="2" y2="22" />
-      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      <line x1="4" x2="20" y1="9" y2="9" />
+      <line x1="4" x2="20" y1="15" y2="15" />
+      <line x1="10" x2="8" y1="3" y2="21" />
+      <line x1="16" x2="14" y1="3" y2="21" />
     </svg>
   );
 };
