@@ -2,7 +2,7 @@ import type { AccountType, TransactionType } from '../types';
 
 export const TRANSACTIONS_MOCK: TransactionType[] = [
   {
-    id: '10229831',
+    id: '1761959531499',
     type: 'transfer',
     from: 'John Doe',
     fromAccount: '1023456789',
@@ -13,7 +13,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10218467',
+    id: '1761959531500',
     type: 'transfer',
     from: 'Liam Wilson',
     fromAccount: '6089123450',
@@ -24,7 +24,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'pending'
   },
   {
-    id: '10207538',
+    id: '1761959531501',
     type: 'transfer',
     from: 'Olivia Brown',
     fromAccount: '5078912340',
@@ -35,7 +35,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10196854',
+    id: '1761959531502',
     type: 'transfer',
     from: 'Emma Johnson',
     fromAccount: '4067891230',
@@ -46,7 +46,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10185712',
+    id: '1761959531503',
     type: 'transfer',
     from: 'Michael Smith',
     fromAccount: '3056789120',
@@ -57,7 +57,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'pending'
   },
   {
-    id: '10174326',
+    id: '1761959531504',
     type: 'transfer',
     from: 'Jane Doe',
     fromAccount: '2045678910',
@@ -68,7 +68,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10162957',
+    id: '1761959531505',
     type: 'transfer',
     from: 'Sophia Miller',
     fromAccount: '7091234560',
@@ -79,7 +79,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'pending'
   },
   {
-    id: '10150794',
+    id: '1761959531506',
     type: 'transfer',
     from: 'Liam Wilson',
     fromAccount: '6089123450',
@@ -90,7 +90,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10149368',
+    id: '1761959531507',
     type: 'transfer',
     from: 'John Doe',
     fromAccount: '1023456789',
@@ -101,7 +101,7 @@ export const TRANSACTIONS_MOCK: TransactionType[] = [
     status: 'completed'
   },
   {
-    id: '10138215',
+    id: '1761959531508',
     type: 'transfer',
     from: 'Emma Johnson',
     fromAccount: '4067891230',
